@@ -3,12 +3,12 @@ entries:
   Fio-Benchmark:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-09T15:53:47.8536222+01:00"
+    created: "2025-07-09T15:53:59.3536899+01:00"
     description: A Helm chart for Kubernetes
-    digest: b650c988601b2e528fe7a6c1abac730ac618ef1d334d69871f3485c6513c3f05
+    digest: 10074a3f2c6e27e65ffa120eafd342b257e10020de521acf0894a85f360dc1a3
     name: Fio-Benchmark
     type: application
     urls:
     - https://JamesNurdin.github.io/Fio-Benchmark/Fio-Benchmark-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-09T15:53:47.8526229+01:00"
+generated: "2025-07-09T15:53:59.3521478+01:00"
