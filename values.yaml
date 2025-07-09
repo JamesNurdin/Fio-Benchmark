@@ -1,0 +1,7 @@
+nodes:
+  - "idagpu-18"
+
+run_name: "actual-test"
+
+#helm install fio-bench . -n pgr24james -f values.yaml
+
