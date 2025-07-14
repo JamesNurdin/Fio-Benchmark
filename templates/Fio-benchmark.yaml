@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: fio-bench-{{ $nodeName }}
+  name: fio-bench-{{ $nodeName }}-{{ $.Values.run_name }}
   namespace: pgr24james
   labels:
     benchmark: fio-readonly
