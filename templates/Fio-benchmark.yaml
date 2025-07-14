@@ -22,7 +22,7 @@ spec:
     - name: fio-data
       {{- if $.Values.useEmptyDir }}
       emptyDir: {}
-      {{ - else }}
+      {{- else }}
       persistentVolumeClaim:
         claimName: {{ $.Values.fioPvcName }}
       {{- end }}
