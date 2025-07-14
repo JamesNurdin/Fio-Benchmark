@@ -10,10 +10,18 @@
     },
     "run_name": {
       "type": "string"
+    },
+    "useEmptyDir": {
+      "type": "boolean"
+    },
+    "fioPvcName": {
+      "type": "string"
     }
   },
   "required": [
+    "fioPvcName",
     "nodes",
-    "run_name"
+    "run_name",
+    "useEmptyDir"
   ]
 }

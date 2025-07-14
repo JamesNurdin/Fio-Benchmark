@@ -19,14 +19,18 @@ spec:
   nodeName: {{ $nodeName }}           # Pin to specific node (optional)
   restartPolicy: Never
   volumes:
-    - name: fio-pvc
+    - name: fio-data
+      {{- if $.Values.useEmptyDir }}
+      emptyDir: {}
+      {{ - else }}
       persistentVolumeClaim:
-        claimName: fio-test      # CephFS PVC (≥110 Gi)
+        claimName: {{ $.Values.fioPvcName }}
+      {{- end }}
     - name: primary
       persistentVolumeClaim:
         claimName: pgr24jamesvol1claim
-    - name: results
-      emptyDir: {}               # scratch for JSON
+    - name: empty-directory
+      emptyDir: {}
 
   initContainers:
     - name: prefill
@@ -50,7 +54,7 @@ spec:
                 --output-format=json
           fi
       volumeMounts:
-        - name: fio-pvc
+        - name: fio-data
           mountPath: /mnt/fio-test
       resources:
         requests:
@@ -98,12 +102,11 @@ spec:
             #    > /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/results/{{ $.Values.run_name }}/${NODE_NAME}/latency-result-${iter}.json
           done
       volumeMounts:
-        - name: fio-pvc
+        - name: fio-data
           mountPath: /mnt/fio-test
-        - name: results
-          mountPath: /results
         - name: primary
           mountPath: /mnt/primary/
+
       resources:
         requests:
           cpu: "4"

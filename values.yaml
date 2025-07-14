@@ -3,5 +3,7 @@ nodes:
 
 run_name: "actual-test"
 
+useEmptyDir: false
+fioPvcName: "fio-test"
 #helm install fio-bench . -n pgr24james -f values.yaml
 
