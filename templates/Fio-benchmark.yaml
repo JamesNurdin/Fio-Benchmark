@@ -113,7 +113,7 @@ spec:
           memory: "10Gi"
         limits:
           cpu: "4"
-          memory: "1Gi"
+          memory: "10Gi"
       securityContext:
         capabilities:
           drop: ["MKNOD"]
