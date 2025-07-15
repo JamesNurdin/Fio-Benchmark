@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODES=("idagpu-18" "idagpu-19" "idagpu-20" "idagpu-21" "idagpu-22" "idagpu-23")
+NODES=("os-gpu-02" "os-gpu-03" "os-gpu-04")
 RUN_NAME="actual-test"
 
 for NODE in "${NODES[@]}"; do
@@ -10,9 +10,11 @@ for NODE in "${NODES[@]}"; do
   helm upgrade --install "$RELEASE" . \
     -n pgr24james \
     --set nodes={$NODE} \
-    --set run_name="${RUN_NAME}"
+    --set run_name="${RUN_NAME}" \
+    --set useEmptyDir=false \
+    --set fioPvcName="fio-test"
 
-  echo "⏱️  Waiting for pod on $NODE to complete..."
+  echo "  Waiting for pod on $NODE to complete..."
 
   while true; do
     POD_NAME=$(kubectl get pods -n pgr24james \

@@ -59,10 +59,10 @@ spec:
       resources:
         requests:
           cpu: "4"
-          memory: "20Gi"
+          memory: "10Gi"
         limits:
           cpu: "4"
-          memory: "20Gi"
+          memory: "10Gi"
       securityContext:
         capabilities:
           drop: ["MKNOD"]
@@ -110,10 +110,10 @@ spec:
       resources:
         requests:
           cpu: "4"
-          memory: "100Gi"
+          memory: "10Gi"
         limits:
           cpu: "4"
-          memory: "100Gi"
+          memory: "1Gi"
       securityContext:
         capabilities:
           drop: ["MKNOD"]
