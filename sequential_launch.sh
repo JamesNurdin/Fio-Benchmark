@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NODES=("os-gpu-02" "os-gpu-03" "os-gpu-04")
+NODES=("os-gpu-01" "os-gpu-03" "os-gpu-04")
 RUN_NAME="actual-test"
 
 for NODE in "${NODES[@]}"; do
