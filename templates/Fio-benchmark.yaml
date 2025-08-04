@@ -78,7 +78,7 @@ spec:
         "cd /mnt/primary/Mini-project/Apache/System/Probe/node_only/net_exporter.py"
       ]
       volumeMounts:
-        - name: pgr24jamesvol1claim
+        - name: primary
           mountPath: /mnt/primary
       resources:
         requests:

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NODES=("os-gpu-01" "os-gpu-03" "os-gpu-04")
-RUN_NAME="actual-test"
+NODES=("os-gpu-01" "os-gpu-02" "os-gpu-03" "os-gpu-04" "os-gpu-05")
+RUN_NAME="benchmark-no-probe"
 
 for NODE in "${NODES[@]}"; do
   RELEASE="fio-bench-${NODE}"
@@ -12,6 +12,9 @@ for NODE in "${NODES[@]}"; do
     --set nodes={$NODE} \
     --set run_name="${RUN_NAME}" \
     --set useEmptyDir=false \
+    --set dataDir="ten_data" \
+    --set fileSize="10G"\
+    --set iterations=10 \
     --set fioPvcName="fio-test"
 
   echo "  Waiting for pod on $NODE to complete..."
