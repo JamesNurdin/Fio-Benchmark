@@ -68,6 +68,30 @@ spec:
           drop: ["MKNOD"]
 
   containers:
+    - name: host-ceph-stats
+      ports:
+        - containerPort: 8000
+      image: macavaney/idabox:py310-v105  # Lightweight container for testing
+      command: [
+        "/bin/sh",
+        "-c",
+        "cd /mnt/primary/Mini-project/Apache/System/Probe/node_only/net_exporter.py"
+      ]
+      volumeMounts:
+        - name: pgr24jamesvol1claim
+          mountPath: /mnt/primary
+      resources:
+        requests:
+          cpu: "1"
+          memory: "1Gi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"
+      securityContext:
+        capabilities:
+          drop:
+            - MKNOD
+        imagePullPolicy: IfNotPresent
     - name: fio
       image: macavaney/idabox:py310-v105
       imagePullPolicy: IfNotPresent
