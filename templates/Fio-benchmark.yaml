@@ -75,7 +75,8 @@ spec:
       command: [
         "/bin/sh",
         "-c",
-        "cd /mnt/primary/Mini-project/Apache/System/Probe/node_only/net_exporter.py"
+        "cd /mnt/primary/Mini-project/Apache/System/Probe/node_only",
+        "python net_exporter.py"
       ]
       volumeMounts:
         - name: primary
