@@ -70,7 +70,7 @@ spec:
   containers:
     - name: host-ceph-stats
       ports:
-        - containerPort: 8000
+        - containerPort: 8001
       image: macavaney/idabox:py310-v105  # Lightweight container for testing
       command: [
         "/bin/sh",
