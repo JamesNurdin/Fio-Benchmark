@@ -87,7 +87,7 @@ spec:
             python /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/benchmark.py \
               --node ${NODE_NAME} \
               --job_name {{ $.Values.run_name }} \
-              --data_dir {{ $.Values.dataDir }} \ 
+              --data_dir {{ $.Values.dataDir }} \
               --result_dir {{ $.Values.run_name }} \
               --filename throughput-result-${iter}
           done
