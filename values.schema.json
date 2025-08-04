@@ -16,10 +16,22 @@
     },
     "fioPvcName": {
       "type": "string"
+    },
+    "dataDir": {
+      "type": "string"
+    },
+    "fileSize": {
+      "type": "string"
+    },
+    "iterations": {
+      "type": "integer"
     }
   },
   "required": [
+    "dataDir",
+    "fileSize",
     "fioPvcName",
+    "iterations",
     "nodes",
     "run_name",
     "useEmptyDir"
