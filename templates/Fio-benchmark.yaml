@@ -44,7 +44,7 @@ spec:
           if [ -d /mnt/fio-test/{{$.Values.dataDir}} ] && [ "$(ls -A /mnt/fio-test/{{$.Values.dataDir}} 2>/dev/null)" ]; then
             echo "[prefill] Data already present – skipping generation."
           else
-            echo "[prefill] No data found – generating 100 GiB test file..."
+            echo "[prefill] No data found – generating {{$.Values.fileSize}}B test file..."
             mkdir -p /mnt/fio-test/{{$.Values.dataDir}}
             fio --name=fill \
                 --directory=/mnt/fio-test/{{$.Values.dataDir}} \

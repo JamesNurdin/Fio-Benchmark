@@ -1,7 +1,7 @@
 nodes:
   - "idagpu-18"
 
-run_name: "benchmark_no_probe"
+run_name: "benchmark-no-probe"
 
 useEmptyDir: false
 fioPvcName: "fio-test"
