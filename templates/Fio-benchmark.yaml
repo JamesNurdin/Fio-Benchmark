@@ -82,7 +82,7 @@ spec:
         - |
           set -e
           apt install fio
-          for iter in $(seq 1 {{ $Values.iterations }}); do
+          for iter in $(seq 1 {{ $.Values.iterations }}); do
             echo "### iteration $iter on ${NODE_NAME} $(date)"
             python /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/benchmark.py \
               --node ${NODE_NAME} \
