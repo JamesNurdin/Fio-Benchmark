@@ -77,12 +77,11 @@ spec:
       ports:
         - containerPort: 8001
       image: macavaney/idabox:py310-v105  # Lightweight container for testing
-      command: [
-        "/bin/sh",
-        "-c",
-        "cd /mnt/primary/Mini-project/Apache/System/Probe/node_only",
-        "python net_exporter.py"
-      ]
+      command: [ "/bin/sh", "-c" ]
+      args:
+        - |
+          cd /mnt/primary/Mini-project/Apache/System/Probe/node_only
+          python net_exporter.py
       volumeMounts:
         - name: primary
           mountPath: /mnt/primary
