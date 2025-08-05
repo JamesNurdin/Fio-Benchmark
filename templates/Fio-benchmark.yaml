@@ -69,6 +69,11 @@ spec:
 
   containers:
     - name: host-ceph-stats
+      env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
       ports:
         - containerPort: 8001
       image: macavaney/idabox:py310-v105  # Lightweight container for testing
