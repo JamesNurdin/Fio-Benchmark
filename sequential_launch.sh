@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NODES=("os-gpu-01" "os-gpu-02" "os-gpu-03" "os-gpu-04" "os-gpu-05")
-RUN_NAME="benchmark-no-probe-test"
+RUN_NAME="benchmark-probe"
 
 for NODE in "${NODES[@]}"; do
   RELEASE="fio-bench-${NODE}"
@@ -45,5 +45,4 @@ for NODE in "${NODES[@]}"; do
   echo "🧹 Deleting Helm release: $RELEASE"
   helm uninstall "$RELEASE" -n pgr24james
 done
-
 echo "🎉 All FIO benchmarks completed sequentially."
