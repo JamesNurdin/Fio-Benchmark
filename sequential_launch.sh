@@ -15,7 +15,7 @@ for NODE in "${NODES[@]}"; do
     --set useEmptyDir=false \
     --set dataDir="ten_data" \
     --set fileSize="10G"\
-    --set iterations=10 \
+    --set iterations=2 \
     --set fioPvcName="fio-test"
 
   echo "  Waiting for pod on $NODE to complete..."
