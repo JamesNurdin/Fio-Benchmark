@@ -110,9 +110,9 @@ spec:
         - name: DATA_DIR
           value: {{ $.Values.dataDir }}
         - name: PROBE_NODE
-          value: {{ $.Values.probe_node }}
+          value: "{{ $.Values.probe_node }}"
         - name: ITERATIONS
-          value: {{ $.Values.iterations }}
+          value: "{{ $.Values.iterations }}"
       command:
         - /bin/sh
         - -c
