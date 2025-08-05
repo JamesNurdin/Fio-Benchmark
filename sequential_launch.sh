@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #NODES=("os-gpu-01" "os-gpu-02" "os-gpu-03" "os-gpu-04" "os-gpu-05")
-NODES=("idagpu-18")
+NODES=("idagpu-19")
 RUN_NAME="benchmark-no-probe-test"
 
 for NODE in "${NODES[@]}"; do
