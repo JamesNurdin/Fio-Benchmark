@@ -119,7 +119,8 @@ spec:
               --job_name {{ $.Values.run_name }} \
               --data_dir {{ $.Values.dataDir }} \
               --result_dir {{ $.Values.run_name }} \
-              --filename throughput-result-${iter}
+              --filename throughput-result-${iter} \
+              --probe_node {{ $.Values.probe_node }}
           done
       volumeMounts:
         - name: fio-data

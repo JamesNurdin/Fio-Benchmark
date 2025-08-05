@@ -8,5 +8,6 @@ fioPvcName: "fio-test"
 dataDir: "ten_data"
 fileSize: "10G"
 iterations: 10
+probe_node: false
 #helm install fio-bench . -n pgr24james -f values.yaml
 

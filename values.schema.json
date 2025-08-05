@@ -25,6 +25,9 @@
     },
     "iterations": {
       "type": "integer"
+    },
+    "probe_node": {
+      "type": "boolean"
     }
   },
   "required": [
@@ -33,6 +36,7 @@
     "fioPvcName",
     "iterations",
     "nodes",
+    "probe_node",
     "run_name",
     "useEmptyDir"
   ]
