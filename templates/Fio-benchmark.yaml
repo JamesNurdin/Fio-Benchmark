@@ -106,22 +106,19 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
+        - name: RUN_NAME
+          value: {{ $.Values.run_name }}
+        - name: DATA_DIR
+          value: {{ $.Values.dataDir }}
+        - name: PROBE_NODE
+          value: {{ $.Values.probe_node }}
+        - name: ITERATIONS
+          value: { { $.Values.iterations } }
       command:
         - /bin/sh
         - -c
         - |
-          set -e
-          apt install fio -y
-          for iter in $(seq 1 {{ $.Values.iterations }}); do
-            echo "### iteration $iter on ${NODE_NAME} $(date)"
-            python /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/benchmark.py \
-              --node ${NODE_NAME} \
-              --job_name {{ $.Values.run_name }} \
-              --data_dir {{ $.Values.dataDir }} \
-              --result_dir {{ $.Values.run_name }} \
-              --filename throughput-result-${iter} \
-              --probe_node {{ $.Values.probe_node }}
-          done
+           /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/run_benchmark.sh
       volumeMounts:
         - name: fio-data
           mountPath: /mnt/fio-test
