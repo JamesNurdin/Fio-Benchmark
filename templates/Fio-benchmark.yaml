@@ -80,7 +80,7 @@ spec:
       command: [ "/bin/sh", "-c" ]
       args:
         - |
-          cd /mnt/primary/Mini-project/Apache/System/Probe/node_only
+          cd /mnt/primary/Mini-project/Apache/System/old/Probe/node_only
           python net_exporter.py
       volumeMounts:
         - name: primary

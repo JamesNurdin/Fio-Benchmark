@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NODES=("os-gpu-01" "os-gpu-02" "os-gpu-03" "os-gpu-04" "os-gpu-05")
-RUN_NAME="benchmark-no-probe"
+RUN_NAME="benchmark-new-network"
 
 for NODE in "${NODES[@]}"; do
   RELEASE="fio-bench-${NODE}"
@@ -12,14 +12,15 @@ for NODE in "${NODES[@]}"; do
     --set nodes={$NODE} \
     --set run_name="${RUN_NAME}" \
     --set useEmptyDir=false \
-    --set dataDir="ten_data" \
-    --set fileSize="10G"\
+    --set dataDir="100_data" \
+    --set fileSize="100G"\
     --set iterations=5 \
     --set probe_node=false \
     --set fioPvcName="fio-test"
 
   echo "  Waiting for pod on $NODE to complete..."
 
+  while true; do
   while true; do
     POD_NAME=$(kubectl get pods -n pgr24james \
       -l benchmark=fio-readonly \
