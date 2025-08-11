@@ -21,7 +21,6 @@ for NODE in "${NODES[@]}"; do
   echo "  Waiting for pod on $NODE to complete..."
 
   while true; do
-  while true; do
     POD_NAME=$(kubectl get pods -n pgr24james \
       -l benchmark=fio-readonly \
       --field-selector spec.nodeName=${NODE} \
