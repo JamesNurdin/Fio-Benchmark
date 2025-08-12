@@ -109,15 +109,15 @@ spec:
           value: {{ $.Values.run_name }}
         - name: DATA_DIR
           value: {{ $.Values.dataDir }}
-        - name: PROBE_NODE
-          value: "{{ $.Values.probe_node }}"
         - name: ITERATIONS
           value: "{{ $.Values.iterations }}"
+        - name: PROBE_NODE
+          value: "{{ $.Values.probe_node }}"
       command:
         - /bin/sh
         - -c
         - |
-           /mnt/primary/Mini-project/Benchmarks/Node_Benchmarks/run_benchmark.sh
+           /mnt/primary/Mini-project/Benchmarks/Node_Benchmarks/Ceph/run_benchmark.sh
       volumeMounts:
         - name: fio-data
           mountPath: /mnt/fio-test
