@@ -80,7 +80,7 @@ spec:
       command: [ "/bin/sh", "-c" ]
       args:
         - |
-          cd /mnt/primary/Mini-project/Apache/System/old/Probe/node_only
+          cd /mnt/primary/Mini-project/Apache/System/Probe/old_probe/node_only
           python net_exporter.py
       volumeMounts:
         - name: primary
@@ -117,7 +117,7 @@ spec:
         - /bin/sh
         - -c
         - |
-           /mnt/primary/Mini-project/Apache/System/Node_Benchmarks/run_benchmark.sh
+           /mnt/primary/Mini-project/Benchmarks/Node_Benchmarks/run_benchmark.sh
       volumeMounts:
         - name: fio-data
           mountPath: /mnt/fio-test
